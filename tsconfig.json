@@ -3,11 +3,21 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
     "lib": ["es6", "dom"],
     "module": "es6",
     "moduleResolution": "node",
     "baseUrl": ".",
+    "types": [
+      "node",
+      "webpack-env" // here
+    ],
     "paths": {
+      "@/*": [
+        "./*"
+       ],
       "*": ["node_modules/*", "app/javascript/*"]
     },
     "sourceMap": true,

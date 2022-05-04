@@ -7,6 +7,17 @@ config = merge({
   module: {
     rules: [
       {
+        test: /\.ts$/,
+        enforce: 'pre',
+        loader: 'tslint-loader',
+        options: {},
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader'
       }
@@ -14,7 +25,7 @@ config = merge({
   },
   plugins: [new ForkTSCheckerWebpackPlugin(), new VueLoaderPlugin()],
   resolve: {
-    extensions: ['.vue']
+    extensions: ['.tsx', '.ts', '.js'],
   }
 }, webpackConfig)
 

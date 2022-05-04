@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-const year = ref(2020)
-year.value = 2022
+function handleChange(event: Event) {
+  // `event` implicitly has `any` type
+   console.log((event.target as HTMLInputElement).value)
+}
 </script>
 
 <template>
-  <div>
-    {{ year }}
-    <BButton variant="primary">Test</BButton>
-  </div>
+  <input type="text" @change="handleChange" />
 </template>
